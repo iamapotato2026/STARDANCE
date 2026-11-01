@@ -48,10 +48,15 @@
       position: relative;
       z-index: 10;
       width: 90%;
-      max-width: 500px;
-      margin: 40px auto 20px auto;
-      padding: 20px 15px;
-      border-radius: 16px;
+      max-width: 480px;
+      margin: 35px auto 15px auto;
+      padding: 16px 12px;
+      border-radius: 20px;
+      background: rgba(10, 14, 26, 0.45);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     }
     
     .input-group {
@@ -59,34 +64,43 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      gap: 15px;
-      margin-top: 20px;
+      gap: 12px;
+      margin-top: 15px;
     }
 
     .input-group label {
-      font-size: 1.1rem;
-      font-weight: bold;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #cbd5e1;
+      letter-spacing: 0.5px;
     }
 
     .input-group input[type=text], .input-group input[type=date] {
       width: 100%;
-      max-width: 320px;
-      padding: 12px 18px;
-      border-radius: 50px;
-      font-size: 1rem;
-      border: 1px solid rgba(146, 67, 67, 0.35);
-      background: rgba(80, 20, 20, 0.85);
+      max-width: 300px;
+      padding: 11px 16px;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(15, 23, 42, 0.75);
       color: #ffffff;
       text-align: center;
       appearance: none;
       -webkit-appearance: none;
       color-scheme: dark; 
+      outline: none;
+      transition: all 0.2s ease;
+    }
+
+    .input-group input[type=text]:focus, .input-group input[type=date]:focus {
+      border-color: #ff7675;
+      box-shadow: 0 0 10px rgba(255, 118, 117, 0.2);
     }
 
     input[type="date"]::-webkit-calendar-picker-indicator {
       filter: invert(1);
       cursor: pointer;
-      opacity: 1;
+      opacity: 0.8;
       display: block;
     }
 
@@ -100,27 +114,31 @@
     }
 
     .input-group button, .reset-btn, .generate-card-btn {
-      padding: 12px 24px;
-      border-radius: 50px;
-      font-size: 1rem;
-      background-color: rgba(30, 30, 35, 0.9);
+      padding: 11px 22px;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      background-color: rgba(255, 255, 255, 0.08);
       color: white;
-      border: 1px solid #555;
+      border: 1px solid rgba(255, 255, 255, 0.2);
       cursor: pointer;
-      font-weight: bold;
-      transition: 0.3s;
+      font-weight: 500;
+      transition: all 0.2s ease;
     }
 
     .input-group button:hover, .reset-btn:hover, .generate-card-btn:hover {
       background-color: #ff7675;  
-      color: #000;
+      color: #05070f;
+      border-color: #ff7675;
+      transform: translateY(-1px);
     }
   
     h1, h2 {
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-style: italic;
-      color: white;
-      margin: 10px 20px;
+      color: #94a3b8;
+      margin: 8px 15px;
+      font-weight: 400;
+      letter-spacing: 0.3px;
     }
 
     .content {
@@ -129,17 +147,17 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-top: 20px;
+      margin-top: 15px;
       padding: 0 15px;
     }
 
     h3 {
-      font-size: clamp(1.8rem, 6vw, 3rem);
+      font-size: clamp(1.6rem, 5vw, 2.5rem);
       position: relative;
       white-space: normal;
       word-break: break-word;
       overflow-wrap: anywhere;
-      margin: 10px auto;
+      margin: 8px auto;
       width: 100%;
       max-width: 100%;
       text-align: center;
@@ -147,7 +165,7 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.5));
+      letter-spacing: 1px;
     }
 
     #result-screen {
@@ -161,134 +179,148 @@
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
-      padding: 40px 20px;
+      padding: 30px 15px;
       overflow-y: auto;
     }
 
     .result-content {
       position: relative;
       z-index: 2;
-      max-width: 650px;
+      max-width: 600px;
       width: 100%;
-      padding: 30px 15px;
-      border-radius: 20px;
+      padding: 20px 10px;
+      border-radius: 16px;
       margin: auto;
     }
 
     .result-content h2 {
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       font-style: normal;
       color: #ff7675;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
+      font-weight: 600;
     }
 
     .result-content p {
-      font-size: 1rem;
-      line-height: 1.5;
-      color: #ddd;
-      margin-bottom: 25px;
+      font-size: 0.95rem;
+      line-height: 1.4;
+      color: #cbd5e1;
+      margin-bottom: 20px;
     }
 
     .certificate-card {
-      background: rgba(15, 23, 42, 0.85);
-      border: 2px solid #af6c6c;
-      border-radius: 12px;
-      padding: 15px;
-      margin: 20px 0;
-      box-shadow: 0 0 20px rgba(175, 108, 108, 0.3);
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border: 1px solid rgba(175, 108, 108, 0.35);
+      border-radius: 14px;
+      padding: 12px;
+      margin: 15px 0;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
     }
 
     .cert-border {
-      border: 1px dashed rgba(255, 255, 255, 0.3);
-      padding: 15px;
-      border-radius: 8px;
+      border: 1px dashed rgba(255, 255, 255, 0.15);
+      padding: 12px;
+      border-radius: 10px;
     }
 
     .cert-header {
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       letter-spacing: 2px;
-      color: #00d2ff;
-      margin: 0 0 10px 0;
+      color: #38bdf8;
+      margin: 0 0 8px 0;
+      font-weight: 500;
     }
 
     .cert-body h3#cert-name {
       font-family: sans-serif;
-      font-size: 2rem;
+      font-size: 1.7rem;
       color: #ffffff;
       -webkit-text-fill-color: #ffffff;
       background: transparent;
       -webkit-text-stroke: 0px;
       filter: none;
-      margin: 10px auto;
+      margin: 8px auto;
       text-align: center;
       white-space: normal;
-      font-weight: bold;
+      font-weight: 600;
+      letter-spacing: 0.5px;
     }
 
     .cert-body h4 {
-      font-size: 1.1rem;
+      font-size: 1rem;
       color: #ff7675;
-      margin: 5px 0;
+      margin: 4px 0;
+      font-weight: 500;
     }
 
     .cert-code {
       font-family: monospace;
-      font-size: 0.75rem;
-      color: #aaa;
-      margin-top: 10px;
+      font-size: 0.7rem;
+      color: #94a3b8;
+      margin-top: 8px;
     }
 
     .greeting-card-builder {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 15px;
-      border-radius: 12px;
-      border: 1px solid #333;
-      margin-bottom: 15px;
+      background: rgba(10, 14, 26, 0.6);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      padding: 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      margin-bottom: 12px;
     }
 
     .greeting-card-builder h4 {
-      margin: 0 0 10px 0;
-      font-size: 1rem;
-      color: #00d2ff;
+      margin: 0 0 8px 0;
+      font-size: 0.95rem;
+      color: #38bdf8;
+      font-weight: 500;
     }
 
     .greeting-card-builder select, .greeting-card-builder input {
-      padding: 8px 12px;
-      border-radius: 20px;
-      border: 1px solid #555;
-      background: #111;
+      padding: 7px 12px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(15, 23, 42, 0.8);
       color: white;
-      margin: 5px;
+      margin: 4px;
+      font-size: 0.9rem;
+      outline: none;
     }
 
     .card-preview-box {
-      border: 1px solid rgba(0, 210, 255, 0.3);
-      border-radius: 8px;
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 10px;
       padding: 10px;
-      margin: 10px 0;
-      background: rgba(0, 210, 255, 0.05);
+      margin: 8px 0;
+      background: rgba(56, 189, 248, 0.04);
     }
 
     #greeting-text-display {
       font-style: italic;
-      font-size: 0.95rem;
-      color: #ffffff;
+      font-size: 0.9rem;
+      color: #f1f5f9;
       margin: 0;
     }
 
     .action-btn {
-      padding: 8px 16px;
-      border-radius: 20px;
-      background: #00d2ff;
-      color: #000;
-      font-weight: bold;
+      padding: 7px 14px;
+      border-radius: 10px;
+      background: #38bdf8;
+      color: #05070f;
+      font-weight: 600;
       border: none;
       cursor: pointer;
-      margin: 5px;
+      margin: 4px;
+      font-size: 0.85rem;
+      transition: all 0.2s ease;
     }
   
     .action-btn:hover {
       background: #ffffff;
+      transform: translateY(-1px);
     }
   </style>
 </head>
@@ -321,12 +353,12 @@
       <h2 id="supernova-title">Searching...</h2>
       <p id="supernova-description">Accessing sky archives...</p>
 
-      <button type="button" class="generate-card-btn" id="show-card-btn" onclick="revealCardSection()">✦ Generate Certificate & Card</button>
+      <button type="button" class="generate-card-btn" id="show-card-btn" onclick="revealCardSection()">Generate Certificate & Card</button>
       
-      <div id="card-flow-container" style="display: none; margin-top: 20px;">
+      <div id="card-flow-container" style="display: none; margin-top: 15px;">
         <div id="discovery-certificate" class="certificate-card">
           <div class="cert-border">
-            <p class="cert-header">✦ DISCOVERY RECORD ✦</p>
+            <p class="cert-header">DISCOVERY RECORD</p>
             <div class="cert-body">
               <p>Cosmic entry for <span id="cert-date">YYYY-MM-DD</span> assigned to:</p>
               <h3 id="cert-name">EXPLORER</h3>
@@ -339,8 +371,8 @@
 
         <div class="greeting-card-builder">
           <h4>Create Cosmic Card</h4>
-          <div style="margin-bottom: 10px;">
-            <label for="card-mode" style="font-size: 0.9rem; font-weight: bold;">Card Format:</label><br>
+          <div style="margin-bottom: 8px;">
+            <label for="card-mode" style="font-size: 0.85rem; font-weight: 500;">Card Format:</label><br>
             <select id="card-mode" onchange="toggleCardMode()">
               <option value="overlay">1. Single Image (Text on Photo)</option>
               <option value="separate">2. Download Photo + Text Below</option>
@@ -359,21 +391,21 @@
           </div>
 
           <div id="overlay-actions">
-            <button type="button" class="action-btn" onclick="generateCombinedCard('copy')">📋 Copy Image</button>
-            <button type="button" class="action-btn" onclick="generateCombinedCard('download')">⬇ Download Image</button>
+            <button type="button" class="action-btn" onclick="generateCombinedCard('copy')">Copy Image</button>
+            <button type="button" class="action-btn" onclick="generateCombinedCard('download')">Download Image</button>
           </div>
 
           <div id="separate-actions" style="display: none;">
-            <button type="button" class="action-btn" onclick="processSeparateOutput()">🚀 Get Image & Copy Text</button>
+            <button type="button" class="action-btn" onclick="processSeparateOutput()">Get Image & Copy Text</button>
           </div>
 
-          <div style="margin-top: 10px;">
-            <button type="button" class="action-btn" onclick="copyGreetingCardLink()">📋 Copy Card Details</button>
+          <div style="margin-top: 8px;">
+            <button type="button" class="action-btn" onclick="copyGreetingCardLink()">Copy Card Details</button>
           </div>
         </div>
       </div>
 
-      <div style="margin-top: 20px;">
+      <div style="margin-top: 15px;">
         <button class="reset-btn" onclick="resetView()">Search Another Date</button>
       </div>
     </div>
@@ -497,7 +529,7 @@
       const title = document.getElementById("supernova-title").innerText;
       const imageUrl = document.getElementById("supernova-bg").src;
       
-      const fullShareText = `${text}\n\n✦ Linked Supernova: ${title}\n✦ NASA Image: ${imageUrl}\n✦ Created on SUPERCLUSTER`;
+      const fullShareText = `${text}\n\nLinked Supernova: ${title}\nNASA Image: ${imageUrl}\nCreated on SUPERCLUSTER`;
 
       navigator.clipboard.writeText(fullShareText);
       alert("Card text and image URL copied to clipboard!");
@@ -597,7 +629,7 @@
       const title = document.getElementById("supernova-title").innerText;
       const imageUrl = document.getElementById("supernova-bg").src;
 
-      const fullText = `${text}\n\n✦ Linked Supernova: ${title}\n✦ Created on SUPERCLUSTER`;
+      const fullText = `${text}\n\nLinked Supernova: ${title}\nCreated on SUPERCLUSTER`;
 
       navigator.clipboard.writeText(fullText);
 
@@ -706,6 +738,4 @@
     animateParticles();
   </script>
 </body>
-</html>    
-
-    
+</html>
